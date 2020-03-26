@@ -12,7 +12,7 @@ On the front-end,
 - drag in `assets`, like images or music, to add them to your project
 
 
-Made by GLITCH
+Made by Fog Creek
 -----------------
 
 \ ゜o゜)ノ
