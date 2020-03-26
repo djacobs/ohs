@@ -1,8 +1,16 @@
 import time
-print("\n" * 200)
-print(">>>>>>>>>>Awesome Adventure<<<<<<<<<<\n")
-print("\n" * 3)
-time.sleep(3)
+
+# This is Oxford homeschool session #1. 
+# We are commenting this code for just three kids. 
+
+
+print("\n")
+print("\n means NEW LINE - it's a little ugly, right?")
+print("\n");
+
+print(">>>Awesome Adventure<<<\n")
+print("\n")
+time.sleep(2)
 print("\nA long time ago, a warrior strode forth from the frozen north.")
 time.sleep(1)
 print("Does this warrior have a name?")
@@ -18,14 +26,15 @@ print("Will", name, "prevail, and win great fortune...")
 time.sleep(1)
 print("Or die by the hands of great evil...?")
 time.sleep(1)
-print("\n" *3)
+print("\n")
+print("\n")
+print("\n")
 print("Only time will tell...")
 time.sleep(1)
 print('...')
 time.sleep(1)
-
  
-print("\n" *200)
+print("\n")
  
 print(''' You find yourself at a small inn. There's
   little gold in your purse but your sword is sharp,
@@ -35,9 +44,12 @@ print(''' You find yourself at a small inn. There's
   looking guards.''')
 
 def start():
-  print("\n ----------")
-  print("Do you approach the...\n")
-  print("1. Ragged looking man \n")
+  # This is how you add a new option
+  print("----------")
+        
+  # What option are you presenting the player?
+  print("Do you approach the...")
+  print("1. Ragged looking man")
   print("2. Dangerous looking guards")
 
   cmdlist=["1", "2"]
@@ -51,13 +63,29 @@ def start():
 
     
 def ragged():
-  print("\n" * 2)
+  print("\n")
   print('''You walk up to the ragged looking man and
   greet him.  He smiles a toothless grin and, with a strange
   accent, says. "Buy me a cup of wine, and I'll tell you of
   great treasure...''')
   time.sleep(2)
   
+  # What option are you presenting the player?
+  print("Write your two options here...")
+  print("1. <Write Option 1 here>")
+  print("2. <Write Option 2 here>")
+
+  cmdlist=["1", "2"]
+ 
+  cmd = getcmd(cmdlist)
+ 
+  if cmd == "1":
+    LevOne()
+  elif cmd == "2":
+    LevTwo()
+
+
+        
 def guards():
   print("\n" * 2)
   print('''You walk up to the dangerous looking guards
@@ -66,6 +94,33 @@ def guards():
   for the hilt of his sword...''')
  
   time.sleep(2)
+  
+  # What option are you presenting the player?
+  print("Write your two options here...")
+  print("1. <Write Option 1 here>")
+  print("2. <Write Option 2 here>")
+
+  #this code presents the options      
+  cmdlist=["1", "2"] 
+  cmd = getcmd(cmdlist)
+ 
+  if cmd == "1":
+    DavidOne()
+  elif cmd == "2":
+    DavidTwo()
+
+def DavidOne():
+  print("\n")
+  print(''' Write what happens in Option 1 ''')
+ 
+  time.sleep(2)
+  
+def DavidTwo():
+  print("\n")
+  print(''' Write What happens in Option 2 ''')
+ 
+  time.sleep(2)
+  
   
 def LevOne():
   print("\n" * 2)
