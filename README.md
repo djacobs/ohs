@@ -16,5 +16,3 @@ Made by Fog Creek
 -----------------
 
 \ ゜o゜)ノ
-# ohs
-# ohs

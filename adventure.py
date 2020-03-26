@@ -33,11 +33,11 @@ print(''' You find yourself at a small inn. There's
   With you are three other customers.
   A ragged looking man, and a pair of dangerous
   looking guards.''')
+
 def start():
   print("\n ----------")
-  print("Do you approach the...")
-  print("\n")
-  print("1. Ragged looking man")
+  print("Do you approach the...\n")
+  print("1. Ragged looking man \n")
   print("2. Dangerous looking guards")
 
   cmdlist=["1", "2"]
@@ -53,23 +53,56 @@ def start():
 def ragged():
   print("\n" * 2)
   print('''You walk up to the ragged looking man and
-  greet him.
-  He smiles a toothless grin and, with a strange
-  accent, says.
-  "Buy me a cup of wine, and I'll tell you of
+  greet him.  He smiles a toothless grin and, with a strange
+  accent, says. "Buy me a cup of wine, and I'll tell you of
   great treasure...''')
   time.sleep(2)
   
 def guards():
   print("\n" * 2)
   print('''You walk up to the dangerous looking guards
-  and greet them.
-  The guards look up from their drinks and
-  snarl at you.
-  "What do you want, barbarian?" One guard reaches
+  and greet them.  The guards look up from their drinks and
+  snarl at you.  "What do you want, barbarian?" One guard reaches
   for the hilt of his sword...''')
  
   time.sleep(2)
+  
+def LevOne():
+  print("\n" * 2)
+  print(''' Write what happens in Option 1 ''')
+ 
+  time.sleep(2)
+  
+def LevTwo():
+  print("\n" * 2)
+  print(''' Write What happens in Option 2 ''')
+ 
+  time.sleep(2)
+
+def EliOne():
+  print("\n" * 2)
+  print(''' Write what happens in Option 1 ''')
+ 
+  time.sleep(2)
+  
+def EliTwo():
+  print("\n" * 2)
+  print(''' Write What happens in Option 2 ''')
+ 
+  time.sleep(2)
+  
+def DomOne():
+  print("\n" * 2)
+  print(''' Write what happens in Option 1 ''')
+ 
+  time.sleep(2)
+  
+def DomTwo():
+  print("\n" * 2)
+  print(''' Write What happens in Option 2 ''')
+ 
+  time.sleep(2)
+  
   
 def getcmd(cmdlist):
   cmd = input(name+"> ")
