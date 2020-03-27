@@ -48,6 +48,7 @@ class Fighter:
       time.sleep(1)
       pTwo.hp = pTwo.hp - randint(1, pOne.strength*2)
       print(pTwo.name + " now has only " + str(pTwo.hp) + " hit points remaining.")
+      time.sleep(1)
     else:
       print("It's a miss!")
       time.sleep(1)
@@ -66,6 +67,7 @@ class Fighter:
           print(pTwo.name + " responds...", end=" ")
           pTwo.attacks(pOne)
         else:
+          pOne.xp=pOne.xp+50
           print(pTwo.name + " is out of health!")
       else:
         print(pTwo.name + " goes first..." , end=" ")
@@ -75,12 +77,18 @@ class Fighter:
           pOne.attacks(pTwo)
         else:
           print(pOne.name + " is out of health!")
+          pTwo.xp=pTwo.xp+50
 
 lev = Fighter("Lev", 3, 4, 4)
 eli = Fighter("Eli", 4, 3, 4)
 dom = Fighter("Dom", 5, 2, 4)
 
 lev.battle(dom)
+
+lev.sheet()
+dom.sheet()
+
+
 
 
 # Other ideas 
