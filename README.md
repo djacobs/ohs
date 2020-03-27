@@ -5,6 +5,8 @@ This project is a mere stub project that lets you start using Python.
 
 Lev, Eli and Dom are learning some basic python ideas.
 
+https://glitch.com/~oxford-homeschool
+
 Made by GLITCH - modified by Lev, Eli, Dom and David
 -----------------
 
