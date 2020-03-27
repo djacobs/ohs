@@ -4,14 +4,14 @@ import time
 from random import seed
 from random import randint
 
-# Some rules are in stats!
+# Some rules are written in stats!
 MAX_LEVEL = 1
 MAX_STRENGTH = 5
 MAX_DEXTERITY = 5
 MAX_CONSTITUTION = 5
 MAX_STATS = 11
 
-# Define character attributes - this is an object. 
+# Defines character attributes - this is an "object." 
 class Fighter:
   def __init__(self, name, strength, dexterity, constitution):
     self.name = name
@@ -44,7 +44,7 @@ class Fighter:
 
   def attacks(pOne, pTwo):
     if ((pOne.dexterity + randint(1 , 6)) > (pTwo.dexterity + randint(1 , 6))):
-      print("It's a hit!")
+      print("It's a hit...", end=" ")
       time.sleep(1)
       pTwo.hp = pTwo.hp - randint(1, pOne.strength*2)
       print(pTwo.name + " now has only " + str(pTwo.hp) + " hit points remaining.")
@@ -60,18 +60,18 @@ class Fighter:
     time.sleep(2)
     while ((pOne.hp > 0) and (pTwo.hp > 0)):
       if (randint(0, pOne.dexterity + pTwo.dexterity) < pOne.dexterity):
-        print(pOne.name + " goes first!")
+        print(pOne.name + " goes first...", end=" ")
         pOne.attacks(pTwo)
         if (pTwo.hp > 0):
-          print(pTwo.name + " responds!")
+          print(pTwo.name + " responds...", end=" ")
           pTwo.attacks(pOne)
         else:
           print(pTwo.name + " is out of health!")
       else:
-        print(pTwo.name + " goes first!")
+        print(pTwo.name + " goes first..." , end=" ")
         pTwo.attacks(pOne)
         if (pOne.hp > 0):
-          print(pOne.name + " responds!")
+          print(pOne.name + " responds...", end=" ")
           pOne.attacks(pTwo)
         else:
           print(pOne.name + " is out of health!")
@@ -83,3 +83,9 @@ dom = Fighter("Dom", 5, 2, 4)
 lev.battle(dom)
 
 
+# Other ideas 
+# - better stat sheets?
+# - different weapons?
+# - potions?
+# - monster fights?
+# - faster character creation?
