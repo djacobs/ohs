@@ -89,10 +89,10 @@ class Fighter(Creature):
     # Define rules
     # we want to make sure we can return an error if the stats are too high.
 
-    if (self.strength + self.dexterity + self.constitution > MAX_STATS):
-      self.strength = 3;
-      self.dexterity = 3;
-      self.constitution = 3;
+    while (self.strength + self.dexterity + self.constitution < MAX_STATS):
+      self.strength = random.randint(1,6);
+      self.dexterity = random.randint(1,6);
+      self.constitution = random.randint(1,6);
       print("Looks like", self.name, "was a little OP... We've fixed that!")
 
     # we define hit points after the rules check to make sure we have a valid number
@@ -121,7 +121,7 @@ class Monster(Creature):
 
     # we define hit points after the rules check to make sure we have a valid number
     self.hp = self.constitution * 2
-    print("The monster", self.name, "is hatched.")
+    print("The monster", self.name, "emerges from the depths.")
 
 
 if __name__ == "__main__":
@@ -134,20 +134,12 @@ if __name__ == "__main__":
   dom = Fighter("Dom", 5, 2, 4)
   nitro = Fighter("Nitro", 5, 5, 1)
   Admiralspaceship = Fighter("Admiral spaceship", 5, 5, 1)
+  Shrek = Fighter("Shrek", 1, 1, 1)
 
   # You aren't allowed "." in the names on the left side of the = - so it has to be "eat" not "e.a.t"
-
   eat = Fighter("E.A.T.", 1, 5, 5)
   fatcatomega = Fighter("fat cat omega", 5, 5, 5)
 
-  # Hi! The syntax error was because Shrek was missing a trailing quote.
-  # Originall it was:
-  # Shrek = Fighter("Shrek,1,1,1)
-  # Shrek's name needs to be in quotes Like this: "Shrek"
-
-  Shrek = Fighter("Shrek", 1, 1, 1)
-
-  #
 
   drScientist = Monster("DR science", 8, 5, 8)
   Getoutman = Monster("Get out man", 50, 50, 50)
@@ -157,11 +149,3 @@ if __name__ == "__main__":
   nitro.sheet()
   lev.sheet()
 
-# Other ideas
-# - better stat sheets?
-# - could fighters have quirks?
-# - different weapons?
-# - potions?
-# - monster fights?
-# - faster character creation?
-# - I think dexterity is too important right now ... we need to figure out how to make it less powerful! - DJ

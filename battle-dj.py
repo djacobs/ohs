@@ -2,19 +2,19 @@ from Contest import Fighter
 from Contest import Monster
 import random
 
-# In Contest 
+# In Contest we give name, strength, dexterity, constitution
+# and we get hp, xp
 
 
 hurley = Fighter("Hurley", 4, 4, 4)
 locke = Fighter("Locke", 4, 4, 4)
 
-
+hurley.sheet()
+locke.sheet()
 
 smokey = Monster("Smokey",50,50,50)
 
-#hurley.battle(locke)
-#hurley.sheet()
-#locke.sheet()
+
   
 
 
@@ -46,11 +46,13 @@ smokey = Monster("Smokey",50,50,50)
 
 # Other ideas 
 # - better stat sheets?
-# - could fighters have quirks?
+# - could characters have quirks?
 # - different weapons?
 # - potions?
-# - monster fights?
+# - monster fights (multiple fighters attack a monster?)
+# - legendary monsters?
 # - faster character creation?
-# - I think dexterity is too important right now ... we need to figure out how to make it less powerful! - DJ
+# - level-ups?
+# - classes? (a la Dom's exercise)
 
 
