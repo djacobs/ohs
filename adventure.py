@@ -205,3 +205,5 @@ def getcmd(cmdlist):
 
 if __name__ =="__main__":
   start()  
+else:
+  print("All is good here, thanks")
