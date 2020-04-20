@@ -34,7 +34,7 @@ class Creature:
     print(fighter.name + " has " + str(fighter.hp) + " hit points remaining.")
 
   def attacks(pOne, pTwo):
-    if (pOne.dexterity + randint(1, 6)) > (pTwo.dexterity + randint(1, 6)):
+    if (pOne.dexterity + randint(1, 4)) > (pTwo.dexterity + randint(1, 6)):
       print("It's a hit...", end=" ")
       time.sleep(1)
       pTwo.hp = pTwo.hp - randint(1, pOne.strength + 2)
@@ -125,6 +125,10 @@ class Monster(Creature):
 
 
 if __name__ == "__main__":
+  
+  # These things only run if we call "Contest" from the command line. 
+  
+  
   lev = Fighter("Lev", 3, 4, 4)
   eli = Fighter("Eli", 5, 3, 4)
   dom = Fighter("Dom", 5, 2, 4)
