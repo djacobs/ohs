@@ -12,11 +12,11 @@ def dice(n):
 
 
 def lev(n): 
-  return Cat("Meowscles", 1, 78, 1)
+  return Cat("Meowscles", 1, 148, 1)
 
 
 def dom(n):
-  return Cat("Meowmeow",1,77,2)
+  return Cat("Meowmeow",70,77,2)
 
 
 #def eli(n):

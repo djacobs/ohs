@@ -16,7 +16,7 @@ def lev(n):
 
 
 def dom(n):
-  return Cat("Meowmeow",1,77,2)
+  return Cat("Meowmeow",1,78,1)
 
 
 #def eli(n):

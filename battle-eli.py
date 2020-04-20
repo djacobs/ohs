@@ -12,7 +12,7 @@ def dice(n):
 
 
 def lev(n): 
-  return Cat("Meowscles", 1, 78, 1)
+  return Cat("Meowscles", 1, 148, 1)
 
 
 def dom(n):
