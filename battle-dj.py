@@ -1,3 +1,4 @@
+from Contest import Creature
 from Contest import Fighter
 from Contest import Monster
 from Contest import Cat
@@ -7,36 +8,45 @@ import random
 # and we get hp, xp and "type"
 # 4 8 15 16 23 42
 
+
+class Kibble(Creature):
+  print("This is a test")
+  
+
 def dice(n):
   return random.randint(1,n)
 
-
 def lev(n): 
-  return Cat("Meowscles", 1, 78, 1)
+  a = dice(n)
+  return Cat("Meowscles", a, 80-2*a, a)
 
 
 def dom(n):
-  return Cat("Meowmeow",1,77,2)
+  a = dice(n)
+  return Cat("Meowmeow",a,70-2*a,10+a)
 
 
-#def eli(n):
-  # return Kibble_absorber("Small",10000000,1000000,1000000)           
+def eli(n):
+  return Kibble("Small",10000000,1000000,1000000)
+
   #return cat("Small",1000000,1000000,1000000)           
 
 
+#small = eli(2)
+#small.sheet()
 
 
 
 
 
 meowscles = lev(10)
-
 meowmeow = dom(10)
 
-#small = eli(2)
-#small.sheet()
-
 meowscles.battle(meowmeow)
+
+
+meowscles.sheet()
+meowmeow.sheet()
 
 # TODO - support AND syntax in battles! 
 
@@ -80,6 +90,14 @@ meowscles.battle(meowmeow)
 #locke.sheet()
 
 #smokey = Monster("Smokey",50,50,50)
+# nitro = Fighter("Nitro", 5, 5, 1)
+#  Admiralspaceship = Fighter("Admiral spaceship", 5, 5, 1)
+#  Shrek = Fighter("Shrek", 1, 1, 1)
+# You aren't allowed "." in the names on the left side of the = - so it has to be "eat" not "e.a.t"
+# eat = Fighter("Eat", 1, 5, 5)
+# fatcatomega = Fighter("fat cat omega", 5, 5, 5)
+
+
 
 
   
@@ -88,8 +106,6 @@ meowscles.battle(meowmeow)
 
 
 
-def dice(n):
-  return random.randint(1,n)
 
 #hurley = Fighter("Hurley", dice(5), dice(5), dice(5))
 #locke = Fighter("Locke", dice(5), dice(5), dice(5))

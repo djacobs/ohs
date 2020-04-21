@@ -2,7 +2,7 @@ Lev, Eli and Dom are learning some basic python ideas.
 ============================
 
 
-Made by GLITCH - modified by Lev, Eli, Dom and David
+Made by GLITCH - modified by Lev, Eli, Dom and David (and Ben...)
 -----------------
 
 \ ゜o゜)ノ

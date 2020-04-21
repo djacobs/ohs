@@ -1,6 +1,6 @@
 from Contest import Fighter
 from Contest import Monster
-from Contest import Cat
+#from Contest import Cat
 import random
 
 # In Contest we make new Fighters or Monsters  name, strength, dexterity, constitution
@@ -11,17 +11,46 @@ def dice(n):
   return random.randint(1,n)
 
 
-def lev(n): 
-  return Cat("Meowscles", 1, 148, 1)
+meowscles = Fighter("Meowscles", 4, 5, 3)
+meowmeow = Fighter("Meowmeow",5,3,4)
+tokoyami = Fighter("Tokoyami", 5, 5, 2)
+muscular = Fighter("Muscular", 6, 2, 4)
+def One_For_All(pOne): 
+  pOne.strength += 5
+  pOne.dexterity += 5
+  pOne.constitution += 3
+  print(pOne.name,"gets ready to detriot smash")
 
 
-def dom(n):
-  return Cat("Meowmeow",70,77,2)
 
 
+One_For_All(meowscles)
+
+def Engine(pTwo):
+  pTwo.dexterity += 6
+  pTwo.strength += 4
+  print(pTwo.name,"gets his engines ready")
+   
+
+
+def Dark_Shadow(pThree):
+  pThree.dexterity += 5
+  pThree.strength += 5
+  print(pThree.name,"In the midst of night the Dark Shadow rises and brings down in mountain in its rage.")
+  
+  
+Dark_Shadow(tokoyami)
+
+  
+
+def Muscle_Augmentation(pFour):
+  pFour.strength += 7
+  pFour.constitution += 5
+  pFour.dexterity += 4
+  print(pFour.name,"feels as the strength rise inside and the power explodes out.")
 #def eli(n):
   # return Kibble_absorber("Small",10000000,1000000,1000000)           
-  #return cat("Small",1000000,1000000,1000000)           
+ #return cat("Small",1000000,1000000,1000000)
 
 
 
@@ -29,14 +58,14 @@ def dom(n):
 
 
 
-meowscles = lev(10)
 
-meowmeow = dom(10)
+
+
 
 #small = eli(2)
 #small.sheet()
 
-meowscles.battle(meowmeow)
+muscular.battle(tokoyami)
 
 # TODO - support AND syntax in battles! 
 
