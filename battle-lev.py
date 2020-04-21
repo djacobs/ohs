@@ -65,7 +65,7 @@ def Muscle_Augmentation(pFour):
 #small = eli(2)
 #small.sheet()
 
-muscular.battle(tokoyami)
+tokoyami.battle(meowscles)
 
 # TODO - support AND syntax in battles! 
 
