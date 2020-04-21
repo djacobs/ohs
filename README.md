@@ -1,15 +1,11 @@
-A Sample Python Project
+Lev, Eli and Dom are learning some basic python ideas.
 ============================
 
-This project is a mere stub project that lets you start using Python. 
 
-Lev, Eli and Dom are learning some basic python ideas.
-
-Made by GLITCH - modified by Lev, Eli, Dom and David
+Made by GLITCH - modified by Lev, Eli, Dom and David (and Ben...)
 -----------------
 
 \ ゜o゜)ノ
-
 
 
  - Want to include a `pip` package? Add it to `requirements.txt`!
@@ -19,3 +15,5 @@ Made by GLITCH - modified by Lev, Eli, Dom and David
 On the front-end,
 - edit `client.js`, `style.css` and `index.html`
 - drag in `assets`, like images or music, to add them to your project
+
+- make sure you are using python3, not python
