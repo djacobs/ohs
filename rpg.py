@@ -118,7 +118,10 @@ while True:
   #['go','east']
   move = ''
   while move == '' or len(move)==1:  
-    move = input('Hello ' + playerName + ' go <direction>, get <item>, open chest, drop <item>, or tell us your name? ')
+    if playerName == "":
+      move = input('Hello, go <direction>, get <item>, open chest, drop <item>, or tell us your name? ')
+    else: 
+      move = input('Hello,', playerName, 'go <direction>, get <item>, open chest, drop <item> ')
     move = move.lower().split()
   
   # Right now this is go or get, and soon Lev will add a new option laser cat .
@@ -147,7 +150,6 @@ while True:
           currentRoom = rooms[currentRoom][direction]
         else:
           print("no key no YEE")
-          currentRoom = rooms[currentRoom]
       else:
         currentRoom = rooms[currentRoom][direction]
     #there is no door (link) to the new room
@@ -160,7 +162,7 @@ while True:
       print("no monsters appeared!")
     else:
       fighter.battle(ghost)
-      ghost.constitution +=10
+      
 
     
     # ask the user to guess a random number
