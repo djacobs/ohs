@@ -1,22 +1,26 @@
 import random
+from Contest import Creature
+from Contest import Fighter
+from Contest import Monster
+from Contest import Cat
+
 #!/bin/python3
 
-# Replace RPG starter project with this code when new instructions are live
-
 # TODO
-# X Change ['item'] calls to handle dictionaries instead of strings. 
+
+# LEV: Add a battle (Goblins) or a battle with Yee, zombies in the master bedroom?
+
+# DOM: Make the locked room next to the kitchen, and require a key to enter the locked room
+
+# ELI: "drop" an item so that it stays in the room you are in, helping with the battle 
+# in the future: multiplayer support 
+
+# TODO: 
+# _ offer what directions are available when someone enters a room
+# _ force the user to choose a name 
 
 
-# I did this by creating "label" and "description" for each item, after our class. 
-
-# A Fat Cat Spy : Require some items to come into some rooms (i.e., you can't go into the secret bookshelf without a cat.)
-
-# DOM: Add a random element to the game (a battle, or roulette?) (i.e., maybe opening the door to a new room triggers a random event - a monster? a cat?)
-
-# A Fat Cat Spy 2: Add a new command ("go" and "get" are limited - battle? sleep? run? "drop" an item? )
-
-
-# Refer to this for examples: https://www.w3schools.com/python/python_dictionaries.asp
+# Refer to this link for examples when you are stuck : https://www.w3schools.com/python/python_dictionaries.asp
 
 
 def showInstructions():
@@ -27,6 +31,9 @@ RPG Game
 Commands:
   go [direction]
   get [item]
+  drop [item]
+  name [name]
+  open chest
 ''')
 
 def showStatus():
@@ -57,6 +64,7 @@ rooms = {
   
   'Kitchen' : {
     'north' : 'Hall',
+    'south' : 'The Locked Room',
     'item' : { 'label' : 'mask', 
                'description' : 'Whoever is wearing the mask makes everyone sad with the word YEE' }
   },
@@ -74,7 +82,7 @@ rooms = {
   },
   
   'The Locked Room' : {
-    'west' : 'Hall'    
+    'north' : 'Kitchen'    
   },
   
   'The Living Room' : {
@@ -90,6 +98,15 @@ playerName = ''
 
 showInstructions()
 
+fighter = Fighter(playerName, 4,4,4)
+
+goblin = Monster("goblin", 2,4,2)
+yee = Monster("YEE", 2,5,5 )
+yee_empowered = Monster("YEE Empowered", 1,7,4)
+zombie = Monster("Zombie", 5,2,1)
+ghost = Monster("ghost", 1,4,4)
+      
+      
 #loop forever
 while True:
 
@@ -101,7 +118,7 @@ while True:
   #['go','east']
   move = ''
   while move == '' or len(move)==1:  
-    move = input('go <direction>, get <item>, open chest, or tell us your name? ')
+    move = input('Hello ' + playerName + ' go <direction>, get <item>, open chest, drop <item>, or tell us your name? ')
     move = move.lower().split()
   
   # Right now this is go or get, and soon Lev will add a new option laser cat .
@@ -113,7 +130,7 @@ while True:
     print("Your name is now ", playerName)
     
   #if they type 'go' first
-  if move[0] == 'go':
+  if command == 'go':
     #check that they are allowed wherever they want to go
     if direction in rooms[currentRoom]:
       # i will write if to get into the bookshelf rituel of doom room
@@ -123,14 +140,39 @@ while True:
           currentRoom = rooms[currentRoom][direction]
         else:
           print("you cant get in as you are not a viral internet meme\n ")
+      elif rooms[currentRoom][direction]=='The Locked Room':          
+        # If you have the key... 
+        if 'key' in inventory:
+          print("welcome to the locked room! \n")
+          currentRoom = rooms[currentRoom][direction]
+        else:
+          print("no key no YEE")
+          currentRoom = rooms[currentRoom]
       else:
         currentRoom = rooms[currentRoom][direction]
     #there is no door (link) to the new room
     else:
         print('You can\'t go that way!')
+    # When a user goes to a new room, see if there is a monster waiting to battle
+    dice = random.randint(1,6)
+    #user_guess = int(input("Put in a number from one to six: "))
+    if not(dice == 6):
+      print("no monsters appeared!")
+    else:
+      fighter.battle(ghost)
+      ghost.constitution +=10
 
+    
+    # ask the user to guess a random number
+    #goblin = ("goblin" = 2,4,2)
+    # if the user guess right, a Goblin appears
+    # Yee is always in the locked room
+    
+        
+        
+        
   #if they type 'get' first
-  if move[0] == 'get' :
+  if command == 'get' :
     #if the room contains an item, and the item is the one they want to get
     if "item" in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']['label']:
       #add the item to their inventory
@@ -140,6 +182,19 @@ while True:
       #delete the item from the room
       # we can still only have one item per room
       del rooms[currentRoom]['item']
+      # if the item is a weapon 
+      # then we need to add strength, dexterity and/or consitution to our hero, the fighter
+      
+      if direction=="knife":
+        fighter.strength += 3 
+        fighter.dexterity += 5 
+      
+      if direction=="sword_of_demons":
+        fighter.strength += 5 
+        fighter.dexterity += 3
+        fighter.constitution += 3 
+        
+      
     #otherwise, if the item isn't there to get
     else:
       #tell them they can't get it
@@ -153,16 +208,27 @@ while True:
     if "chest" in inventory:
       print("you get 20000 gold and the sword that labled he who finds becomes king of the demons but beware with great power comes great bloodlust")
       inventory.append("gold")
-      inventory.append("sword of demons")
+      inventory.append("sword_of_demons")
     else:
       print("no chest in inventory")
       
       # what else could they open?? Right now only the chest. 
-    
-  #if 'key' in inventory:
+  
+  if command == 'drop':
+    print("you are going to drop an item") 
+    # check to see if <direction> is in inventory
+      # if it is, remove the item
+      # and make sure you add it to the inventory of the room where you are standing (currentRoom)
+      # if it is not, say "You actually don't have one"
+  
+  
+  
+
+  #cheebee
   # Dominic we'll come back to this! :)     
 
-
+#you need the key to get into the locked room
+  
   # chance to see your fate
   if currentRoom == 'The Locked Room':
     print("this is the locked room. now you are in the presence of the YEE you must take your chances.")
@@ -180,8 +246,8 @@ while True:
       print("YEE is not impressed.")
       if 'mask' in inventory:
         counter=0
-        for i in inventory:
-          if inventory[i] == 'mask':
+        while counter < len(inventory):
+          if inventory[counter] == 'mask':
             del inventory[counter]
           counter += 1
         rooms['Kitchen']['item'] = { 'label' : 'mask', 'description' : 'Whoever is wearing the mask makes everyone sad with the word YEE' }
@@ -190,11 +256,7 @@ while True:
       print("You are now back in the hall.")
       
     
-    # 
-    #i choose diamond
-    # who are you .
-     #your worst nightmare
-      #hello lev
-      #no im your worst nightmare jimmy bob
-      #oh the pain everything getting so cold
+
+   
+     
       #if they get it wrong delete mask from inventory
