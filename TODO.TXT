@@ -1,2 +1,26 @@
-pygame
-pgzero
+(restore pygame & pgzero)
+
+
+# TODO - IDEAS
+# New Class: cat
+# New Class: superhero
+# New Class: Kibble Absorber
+# - classes? (Knight, Demon, Archer, Wizard, Mechanic,fat cat) (a la Dom's exercise)
+
+
+# TOURNAMENT! 
+#  - one battle winner battles another battle-winner (and so on)
+#  - the winner absorbs the losers stats
+#  - We could also do 2 v 2 or 1 v 3
+
+# Other ideas 
+# - better stat sheets?
+# - could characters have quirks?
+# - different weapons?
+# - potions?
+# - monster fights (multiple fighters attack a monster?)
+# - legendary monsters?
+# - faster character creation?
+# - level-ups?
+
+

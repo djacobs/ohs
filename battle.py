@@ -13,6 +13,7 @@ class Kibble(Creature):
   print("This is a test")
   
 
+# RETURN is how we make a command. 
 def dice(n):
   return random.randint(1,n)
 
@@ -29,11 +30,6 @@ def dom(n):
 def eli(n):
   return Kibble("Small",10000000,1000000,1000000)
 
-  #return cat("Small",1000000,1000000,1000000)           
-
-
-#small = eli(2)
-#small.sheet()
 
 
 
@@ -48,30 +44,11 @@ meowscles.battle(meowmeow)
 meowscles.sheet()
 meowmeow.sheet()
 
+
+
+
+
 # TODO - support AND syntax in battles! 
-
-
-# TODO - IDEAS
-# New Class: cat
-# New Class: superhero
-# New Class: Kibble Absorber
-# - classes? (Knight, Demon, Archer, Wizard, Mechanic,fat cat) (a la Dom's exercise)
-
-
-# TOURNAMENT! 
-#  - one battle winner battles another battle-winner (and so on)
-#  - the winner absorbs the losers stats
-#  - We could also do 2 v 2 or 1 v 3
-
-# Other ideas 
-# - better stat sheets?
-# - could characters have quirks?
-# - different weapons?
-# - potions?
-# - monster fights (multiple fighters attack a monster?)
-# - legendary monsters?
-# - faster character creation?
-# - level-ups?
 
 
 #print(dice(6))
@@ -79,7 +56,6 @@ meowmeow.sheet()
 #medium = Fighter("Medium", dice(8), dice(4), dice(3))
 
 #super_small_kibble_absorbed = cat("super small kibble absorbed")
-
 
 
 #hurley = Fighter("Hurley", 7, 7, 4)
