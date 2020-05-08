@@ -121,7 +121,7 @@ while True:
     if playerName == "":
       move = input('Hello, go <direction>, get <item>, open chest, drop <item>, or tell us your name? ')
     else: 
-      move = input('Hello,', playerName, 'go <direction>, get <item>, open chest, drop <item> ')
+      move = input('Hello, ' + playerName + ' Go <direction>, get <item>, open chest, drop <item> ')
     move = move.lower().split()
   
   # Right now this is go or get, and soon Lev will add a new option laser cat .
@@ -131,6 +131,7 @@ while True:
   if command == 'name':
     playerName = direction
     print("Your name is now ", playerName)
+    fighter.name = playerName
     
   #if they type 'go' first
   if command == 'go':
@@ -161,7 +162,7 @@ while True:
     if not(dice == 6):
       print("no monsters appeared!")
     else:
-      fighter.battle(ghost)
+      fighter.battle(yee)
       
 
     
@@ -241,7 +242,7 @@ while True:
     if choose == answer:
       inventory.append("crystal")
       print("congrats you win now you may keep the mask.")
-      currentRoom == 'hall'
+      currentRoom == 'Hall'
       print("Welcome back to the hall")
     else:
       print("that is wrong it was crystal " + str(answer))
@@ -254,7 +255,7 @@ while True:
           counter += 1
         rooms['Kitchen']['item'] = { 'label' : 'mask', 'description' : 'Whoever is wearing the mask makes everyone sad with the word YEE' }
         print("The mask has been taken from you!")
-      currentRoom == 'hall'
+      currentRoom == 'Hall'
       print("You are now back in the hall.")
       
     
