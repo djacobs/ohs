@@ -105,8 +105,12 @@ yee = Monster("YEE", 2,5,5 )
 yee_empowered = Monster("YEE Empowered", 1,7,4)
 zombie = Monster("Zombie", 5,2,1)
 ghost = Monster("ghost", 1,4,4)
+bun_bun = Monster("Bun Bun", 4,4,4)     
       
-      
+      #bun_bun.strength += 3
+      #bun_bun.dexterity += 7
+      #bun_bun.constitution += 10    
+
 #loop forever
 while True:
 
@@ -162,9 +166,8 @@ while True:
     if not(dice == 6):
       print("no monsters appeared!")
     else:
-      fighter.battle(yee)
+      fighter.battle(bun_bun)
       
-
     
     # ask the user to guess a random number
     #goblin = ("goblin" = 2,4,2)
@@ -187,6 +190,10 @@ while True:
       del rooms[currentRoom]['item']
       # if the item is a weapon 
       # then we need to add strength, dexterity and/or consitution to our hero, the fighter
+      
+      if direction=="crystal":
+        fighter.constitution += 10
+      
       
       if direction=="knife":
         fighter.strength += 3 
