@@ -105,8 +105,12 @@ yee = Monster("YEE", 2,5,5 )
 yee_empowered = Monster("YEE Empowered", 1,7,4)
 zombie = Monster("Zombie", 5,2,1)
 ghost = Monster("ghost", 1,4,4)
+bun_bun = Monster("Bun Bun", 4,4,4)     
       
-      
+      #bun_bun.strength += 3
+      #bun_bun.dexterity += 7
+      #bun_bun.constitution += 10    
+
 #loop forever
 while True:
 
@@ -118,7 +122,10 @@ while True:
   #['go','east']
   move = ''
   while move == '' or len(move)==1:  
-    move = input('Hello ' + playerName + ' go <direction>, get <item>, open chest, drop <item>, or tell us your name? ')
+    if playerName == "":
+      move = input('Hello, go <direction>, get <item>, open chest, drop <item>, or tell us your name? ')
+    else: 
+      move = input('Hello, ' + playerName + ' Go <direction>, get <item>, open chest, drop <item> ')
     move = move.lower().split()
   
   # Right now this is go or get, and soon Lev will add a new option laser cat .
@@ -128,6 +135,7 @@ while True:
   if command == 'name':
     playerName = direction
     print("Your name is now ", playerName)
+    fighter.name = playerName
     
   #if they type 'go' first
   if command == 'go':
@@ -147,7 +155,6 @@ while True:
           currentRoom = rooms[currentRoom][direction]
         else:
           print("no key no YEE")
-          currentRoom = rooms[currentRoom]
       else:
         currentRoom = rooms[currentRoom][direction]
     #there is no door (link) to the new room
@@ -159,9 +166,8 @@ while True:
     if not(dice == 6):
       print("no monsters appeared!")
     else:
-      fighter.battle(ghost)
-      ghost.constitution +=10
-
+      fighter.battle(bun_bun)
+      
     
     # ask the user to guess a random number
     #goblin = ("goblin" = 2,4,2)
@@ -184,6 +190,10 @@ while True:
       del rooms[currentRoom]['item']
       # if the item is a weapon 
       # then we need to add strength, dexterity and/or consitution to our hero, the fighter
+      
+      if direction=="crystal":
+        fighter.constitution += 10
+      
       
       if direction=="knife":
         fighter.strength += 3 
@@ -239,7 +249,7 @@ while True:
     if choose == answer:
       inventory.append("crystal")
       print("congrats you win now you may keep the mask.")
-      currentRoom == 'hall'
+      currentRoom == 'Hall'
       print("Welcome back to the hall")
     else:
       print("that is wrong it was crystal " + str(answer))
@@ -252,7 +262,7 @@ while True:
           counter += 1
         rooms['Kitchen']['item'] = { 'label' : 'mask', 'description' : 'Whoever is wearing the mask makes everyone sad with the word YEE' }
         print("The mask has been taken from you!")
-      currentRoom == 'hall'
+      currentRoom == 'Hall'
       print("You are now back in the hall.")
       
     
